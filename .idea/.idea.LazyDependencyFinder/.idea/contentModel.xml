@@ -5,31 +5,14 @@
     <e p="C:\Users\JAkec\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_LazyDependencyFinder.-1560494617.00" t="ExcludeRecursive" />
     <e p="D:\Git Repos\LazyDependencyFinder" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
-      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Editor" t="Include">
           <e p="LazyHelpers" t="Include">
             <e p="LazyDependencyFinder" t="Include">
               <e p="LazyDependencyFinder.cs" t="Include" />
             </e>
-            <e p="LazySceneLoader" t="Include">
-              <e p="LazyScene.cs" t="Include" />
-              <e p="LazySceneLoader.cs" t="Include" />
-            </e>
             <e p="Resources" t="Include">
               <e p="LazyEditorHelperUtils.cs" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="Scenes" t="Include">
-          <e p="saadsa.cs" t="Include" />
-          <e p="sda.cs" t="Include" />
-        </e>
-        <e p="ScriptFinder" t="Include">
-          <e p="Editor" t="Include">
-            <e p="Editor.cs" t="Include" />
-            <e p="Utilities" t="Include">
-              <e p="Utility.cs" t="Include" />
             </e>
           </e>
         </e>

@@ -20,7 +20,7 @@ using Object = UnityEngine.Object;
 //Alternatively join our Discord
 //DISCORD: https://discord.gg/Z3tpMG
 //
-//Hope you enjoy the simple Scene loader 
+//Hope you enjoy the simple dependency finder 
 //designed and made by lazyFridayStudio
 //================================================================
 
@@ -159,19 +159,6 @@ namespace LazyHelper.LazyDependencyFinder
 		static GameObject obj = null;
 		private void OnGUI()
 		{
-			// obj = EditorGUI.ObjectField(new Rect(3, 3, position.width - 6, 20), "Find Dependency", obj, typeof(GameObject)) as GameObject;
-			//
-			// if (obj)
-			// {
-			// 	Object[] roots = new Object[] { obj };
-			//
-			// 	if (GUI.Button(new Rect(3, 25, position.width - 6, 20), "Check Dependencies"))
-			// 		Selection.objects = EditorUtility.CollectDependencies(roots);
-			// }
-			// else
-			// 	EditorGUI.LabelField(new Rect(3, 25, position.width - 6, 20), "Missing:", "Select an object first");
-			//
-			
 			if (headerBackground == null)
 			{
 				OnEnable();
@@ -321,17 +308,6 @@ namespace LazyHelper.LazyDependencyFinder
 					targetObjectSearchResults.Add(AssetDatabase.GetAssetPath(currentTarget));
 				}
 			}
-		}
-		
-		private List<string> getAllDependencys()
-		{
-			string[] tempResult = AssetDatabase.GetAllAssetPaths();
-			List<string> result = new List<string>();
-			foreach (string s in tempResult)
-			{
-				result.Add(s);
-			}
-			return result;
 		}
 		#endregion
 		

@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fa44d1c-8c91-410a-a481-aa9f32451e86" name="Default Changelist" comment="" />
+    <list default="true" id="8fa44d1c-8c91-410a-a481-aa9f32451e86" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyDependencyFinder/LazyDependencyFinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyDependencyFinder/LazyDependencyFinder.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,9 +29,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/ScriptFinder/Editor/Editor.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -84,6 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604024136148</updated>
       <workItem from="1604024145783" duration="8949000" />
+      <workItem from="1604115147210" duration="40000" />
     </task>
     <servers />
   </component>
@@ -102,6 +102,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
