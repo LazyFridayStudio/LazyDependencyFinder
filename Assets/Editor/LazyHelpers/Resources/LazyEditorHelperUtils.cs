@@ -28,4 +28,8 @@ public class LazyEditorHelperUtils : MonoBehaviour
 		}
 	}
 	#endregion
+	
+	public static Color32 LazyFridayMainColor = new Color32(224, 127, 44, 255);
+	public static Color32 LazyFridaySecondaryColor = new Color32(255, 255, 255, 255);
+	public static Color32 LazyFridayBackgroundColor = new Color32(26, 26, 26, 255);
 }

@@ -46,39 +46,28 @@ namespace LazyHelper.LazyDependencyFinder
 		}
 
 		#region Textures
-		Texture logoHeader;
-
-		Texture2D headerBackground;
-		Texture2D headerSeperator;
-
-		Texture2D submenuBackground;
-
-		Texture2D itemBackground;
-
-		Texture2D itemOddBackground;
-		Texture2D itemEvenBackground;
+		private Texture2D mainBackground;
+		private Texture2D secondaryBackground;
+		private Texture2D seperator;
+		private Texture2D oddBackground;
+		private Texture2D evenBackground;
 		#endregion
 
 		#region Styles
+		public GUIStyle mainTextStyle = new GUIStyle();
+		public GUIStyle secondaryTextStyle = new GUIStyle();
+		public GUIStyle generalTexStyle = new GUIStyle();
+		public GUIStyle paddingStyle = new GUIStyle();
 
-		//Padding style
-		public GUIStyle stylePadding = new GUIStyle();
-
-		//Background Styles
-		public GUIStyle evenBoxStyle = new GUIStyle();
-		public GUIStyle oddBoxStyle = new GUIStyle();
-
-		//Font Styles
-		public GUIStyle itemNameStyle = new GUIStyle();
-		public GUIStyle seperator = new GUIStyle();
-		public GUIStyle icon = new GUIStyle();
+		public GUIStyle evenItemStyle = new GUIStyle();
+		public GUIStyle oddItemStyle = new GUIStyle();
 		#endregion
 
 		#region Sections
 
 		Rect headerSection;
 		Rect subMenuSection;
-		Rect ItemSection;
+		Rect itemSection;
 
 		#endregion
 
@@ -103,53 +92,63 @@ namespace LazyHelper.LazyDependencyFinder
 		//Draw the textures and get images
 		private void InitTextures()
 		{
-			string path = "Assets/Editor/LazyHelpers/Resources/Logo.png";
-			logoHeader = EditorGUIUtility.Load(path) as Texture;
+			mainBackground = new Texture2D(1, 1);
+			mainBackground.SetPixel(0, 0, LazyEditorHelperUtils.LazyFridayBackgroundColor);
+			mainBackground.Apply();
+            
+			secondaryBackground = new Texture2D(1, 1);
+			secondaryBackground.SetPixel(0, 0, new Color32(33, 33, 33, 255));
+			secondaryBackground.Apply();
 
-			headerBackground = new Texture2D(1, 1);
-			headerBackground.SetPixel(0, 0, new Color32(22, 22, 22, 255));
-			headerBackground.Apply();
+			seperator = new Texture2D(1, 1);
+			seperator.SetPixel(0, 0, new Color32(242, 242, 242, 255));
+			seperator.Apply();
+            
+			//Item areas
+			evenBackground = new Texture2D(1, 1);
+			evenBackground.SetPixel(0, 0, new Color32(44, 44, 44, 255));
+			evenBackground.Apply();
 
-			headerSeperator = new Texture2D(1, 1);
-			headerSeperator.SetPixel(0, 0, new Color32(239, 143, 29, 255));
-			headerSeperator.Apply();
-
-			submenuBackground = new Texture2D(1, 1);
-			submenuBackground.SetPixel(0, 0, new Color32(33, 33, 33, 255));
-			submenuBackground.Apply();
-
-			itemBackground = new Texture2D(1, 1);
-			itemBackground.SetPixel(0, 0, new Color32(22, 22, 22, 255));
-			itemBackground.Apply();
-
-			itemEvenBackground = new Texture2D(1, 1);
-			itemEvenBackground.SetPixel(0, 0, new Color32(44, 44, 44, 255));
-			itemEvenBackground.Apply();
-
-			itemOddBackground = new Texture2D(1, 1);
-			itemOddBackground.SetPixel(0, 0, new Color32(33, 33, 33, 255));
-			itemOddBackground.Apply();
+			oddBackground = new Texture2D(1, 1);
+			oddBackground.SetPixel(0, 0, new Color32(33, 33, 33, 255));
+			oddBackground.Apply();
 		}
 
 		//Create the styles
 		private void InitStyle()
 		{
-			oddBoxStyle.normal.background = itemOddBackground;
-			oddBoxStyle.padding = new RectOffset(3, 3, 3, 3);
-			evenBoxStyle.border = new RectOffset(0, 0, 5, 5);
-			oddBoxStyle.normal.textColor = new Color32(255, 255, 255, 255);
+			string path = "Assets/Editor/LazyHelpers/Resources/HeaderFont.ttf";
+			Font headerFont = EditorGUIUtility.Load(path) as Font;
+            
+			//Main Text
+			mainTextStyle.normal.textColor = LazyEditorHelperUtils.LazyFridayMainColor;
+			mainTextStyle.fontSize = 16;
+			mainTextStyle.alignment = TextAnchor.LowerCenter;
+			mainTextStyle.font = headerFont; 
+            
+			//Secondary Text
+			secondaryTextStyle.normal.textColor = LazyEditorHelperUtils.LazyFridayMainColor;
+			secondaryTextStyle.fontSize = 12;
+			secondaryTextStyle.fontStyle = FontStyle.Bold;
+			secondaryTextStyle.alignment = TextAnchor.MiddleCenter;
 
-			evenBoxStyle.normal.background = itemEvenBackground;
-			evenBoxStyle.border = new RectOffset(0, 0, 5, 5);
-			evenBoxStyle.padding = new RectOffset(3, 3, 3, 3);
-			evenBoxStyle.normal.textColor = new Color32(255, 255, 255, 255);
+			//General Text
+			generalTexStyle.normal.textColor = LazyEditorHelperUtils.LazyFridaySecondaryColor;
+			generalTexStyle.fontSize = 12;
+			generalTexStyle.alignment = TextAnchor.MiddleCenter;
+            
+			//Item Styles
+			oddItemStyle.normal.background = oddBackground;
+			oddItemStyle.padding = new RectOffset(3, 3, 3, 3);
+			oddItemStyle.border = new RectOffset(0, 0, 5, 5);
+			oddItemStyle.normal.textColor = LazyEditorHelperUtils.LazyFridaySecondaryColor;
 
-			itemNameStyle.normal.textColor = new Color32(239, 143, 29, 255);
-			itemNameStyle.fontSize = 14;
-			itemNameStyle.fontStyle = FontStyle.Bold;
-			itemNameStyle.alignment = TextAnchor.MiddleCenter;
-
-			stylePadding.margin = new RectOffset(2, 2, 4, 4);
+			evenItemStyle.normal.background = evenBackground;
+			evenItemStyle.border = new RectOffset(0, 0, 5, 5);
+			evenItemStyle.padding = new RectOffset(3, 3, 3, 3);
+			evenItemStyle.normal.textColor = LazyEditorHelperUtils.LazyFridaySecondaryColor;
+            
+			paddingStyle.margin = new RectOffset(2, 2, 4, 4);
 		}
 
 		#endregion
@@ -159,7 +158,7 @@ namespace LazyHelper.LazyDependencyFinder
 		static GameObject obj = null;
 		private void OnGUI()
 		{
-			if (headerBackground == null)
+			if (mainBackground == null)
 			{
 				OnEnable();
 			}
@@ -181,55 +180,40 @@ namespace LazyHelper.LazyDependencyFinder
 			subMenuSection.x = 0;
 			subMenuSection.y = headerSection.height;
 			subMenuSection.width = Screen.width;
-			subMenuSection.height = 70;
+			subMenuSection.height = 27;
 
-			ItemSection.x = 0;
-			ItemSection.y = headerSection.height + subMenuSection.height;
-			ItemSection.width = Screen.width;
-			ItemSection.height = Screen.height;
+			itemSection.x = 0;
+			itemSection.y = headerSection.height + subMenuSection.height;
+			itemSection.width = Screen.width;
+			itemSection.height = Screen.height;
 
-			GUI.DrawTexture(headerSection, headerBackground);
-			GUI.DrawTexture(subMenuSection, submenuBackground);
-			GUI.DrawTexture(ItemSection, headerBackground);
+			GUI.DrawTexture(headerSection, mainBackground);
+			GUI.DrawTexture(subMenuSection, secondaryBackground);
+			GUI.DrawTexture(itemSection, mainBackground);
 
 			//Draw Seperators
-			GUI.DrawTexture(new Rect(headerSection.x, headerSection.height - 2, headerSection.width, 2), headerSeperator);
-			GUI.DrawTexture(new Rect(subMenuSection.x, (subMenuSection.height + headerSection.height) - 2, subMenuSection.width, 2), headerSeperator);
+			GUI.DrawTexture(new Rect(headerSection.x, headerSection.height - 2, headerSection.width, 2), seperator);
+			GUI.DrawTexture(new Rect(subMenuSection.x, (subMenuSection.height + headerSection.height) - 2, subMenuSection.width, 2), seperator);
 		}
 
 		private void DrawHeader()
 		{
+
 			GUILayout.BeginArea(headerSection);
-			Rect centerRect = LazyEditorHelperUtils.CenterRect(headerSection, logoHeader);
-			GUI.Label(new Rect(centerRect.x + 13, centerRect.y - 2, centerRect.width, centerRect.height), logoHeader);
+			// Rect centerRect = LazyEditorHelperUtils.CenterRect(headerSection, logoHeader);
+			GUILayout.Space(7);
+			GUILayout.BeginHorizontal();
+			GUILayout.Label("LAZY FRIDAY STUDIO", mainTextStyle);
+			GUILayout.EndHorizontal();
+			//GUI.Label(new Rect(centerRect.x + 13, centerRect.y - 2, centerRect.width, centerRect.height), logoHeader);
 			GUILayout.EndArea();
 		}
 
 		private void DrawSubHeading()
 		{
+
 			GUILayout.BeginArea(subMenuSection);
-			string helpMessage;
-			MessageType messageType;
-			if (targetObject != null)
-			{
-				if (targetObject.GetType() != typeof(MonoBehaviour))
-				{
-					helpMessage = "This only works for items that are prefabs or in your project view";
-						messageType = MessageType.Info;
-				}
-				else
-				{
-					helpMessage = "This might return nothing, Works best with MonoBehaviours";
-						messageType = MessageType.Warning;
-				}
-			}
-			else
-			{
-				helpMessage = "Item is NULL";
-				messageType = MessageType.Error;
-			}
-			EditorGUILayout.HelpBox(helpMessage, messageType, true);
-			
+			GUILayout.Space(3);
 			GUILayout.BeginHorizontal();
 			targetObject = EditorGUILayout.ObjectField(targetObject, typeof(Object));
 			GUILayout.Label("Total Dependency: " + targetObjectSearchResults.Count.ToString());
@@ -238,6 +222,10 @@ namespace LazyHelper.LazyDependencyFinder
 			if (GUILayout.Button("Find Dependency" ,GUILayout.MaxWidth(150)))
 			{
 				SearchForComponents();
+			}
+			if (GUILayout.Button("Help" ,GUILayout.MaxWidth(150)))
+			{
+				Application.OpenURL("https://www.lazyfridaystudio.com/lazysceneloader");
 			}
 			GUILayout.EndHorizontal();
 			GUILayout.EndArea();
@@ -259,11 +247,11 @@ namespace LazyHelper.LazyDependencyFinder
 					
 					if (isEven)
 					{
-						itemStyle = evenBoxStyle;
+						itemStyle = evenItemStyle;
 					}
 					else
 					{
-						itemStyle = oddBoxStyle;
+						itemStyle = oddItemStyle;
 					}
 					
 					
@@ -272,9 +260,8 @@ namespace LazyHelper.LazyDependencyFinder
 					GUILayout.Label(AssetDatabase.GetCachedIcon(currentItem), GUILayout.MaxHeight(20),GUILayout.MaxWidth(20));
 					GUILayout.Label("|");
 	
-						GUILayout.Label(Path.GetFileName(currentItem),itemNameStyle);
-					
-					
+						GUILayout.Label(Path.GetFileName(currentItem),secondaryTextStyle);
+						
 					GUILayout.Label("|");
 					GUILayout.Label(currentItem);
 					GUILayout.FlexibleSpace();
