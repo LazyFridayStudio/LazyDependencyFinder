@@ -20,8 +20,11 @@ using Object = UnityEngine.Object;
 //Alternatively join our Discord
 //DISCORD: https://discord.gg/Z3tpMG
 //
-//Hope you enjoy the simple dependency finder 
-//designed and made by lazyFridayStudio
+//Check out our projects here
+//WEBSITE: https://www.lazyfridaystudio.com/projects
+//
+//Hope you enjoy the simple Quick Select 
+//designed and made by LazyFridayStudio
 //================================================================
 
 namespace LazyHelper.LazyDependencyFinder
@@ -297,7 +300,5 @@ namespace LazyHelper.LazyDependencyFinder
 			}
 		}
 		#endregion
-		
 	}
-
 }
