@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7c875ab-edc0-4605-b678-1d9d73f33661" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lazy Dependency Finder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lazy Dependency Finder/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c7c875ab-edc0-4605-b678-1d9d73f33661" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,6 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1619694176421</updated>
       <workItem from="1619694185113" duration="1979000" />
+      <workItem from="1619851675817" duration="274000" />
     </task>
     <task id="LOCAL-00001" summary="Updated with new system and new Compact Design">
       <created>1619695917571</created>
@@ -93,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619695917571</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Updated Readme">
+      <created>1619851898930</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1619851898930</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,20 +117,23 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Updated with new system and new Compact Design" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated with new system and new Compact Design" />
+    <MESSAGE value="Updated Readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Readme" />
   </component>
   <component name="WindowStateProjectService">
     <state x="3138" y="609" key="RollbackChangesDialog" timestamp="1619695807313">
       <screen x="2560" y="360" width="1920" height="1080" />
     </state>
     <state x="3138" y="609" key="RollbackChangesDialog/0.0.2560.1400/-1920.360.1920.1080/2560.360.1920.1080@2560.360.1920.1080" timestamp="1619695807313" />
-    <state x="3112" y="632" key="Vcs.Push.Dialog.v2" timestamp="1619695945284">
-      <screen x="2560" y="360" width="1920" height="1080" />
+    <state x="736" y="353" key="Vcs.Push.Dialog.v2" timestamp="1619851950139">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="736" y="353" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.360.1920.1080/2560.360.1920.1080@0.0.2560.1400" timestamp="1619851950139" />
     <state x="3112" y="632" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.360.1920.1080/2560.360.1920.1080@2560.360.1920.1080" timestamp="1619695945284" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1619694936871">
       <screen x="0" y="0" width="2560" height="1400" />

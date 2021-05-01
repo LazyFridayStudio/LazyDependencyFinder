@@ -23,7 +23,7 @@ using Object = UnityEngine.Object;
 //Check out our projects here
 //WEBSITE: https://www.lazyfridaystudio.com/projects
 //
-//Hope you enjoy the simple Quick Select 
+//Hope you enjoy the simple Lazy Dependency Finder 
 //designed and made by LazyFridayStudio
 //================================================================
 
@@ -228,7 +228,7 @@ namespace LazyHelper.LazyDependencyFinder
 			}
 			if (GUILayout.Button("Help" ,GUILayout.MaxWidth(150)))
 			{
-				Application.OpenURL("https://www.lazyfridaystudio.com/lazysceneloader");
+				Application.OpenURL("https://www.lazyfridaystudio.com/lazydependencyfinder");
 			}
 			GUILayout.EndHorizontal();
 			GUILayout.EndArea();
